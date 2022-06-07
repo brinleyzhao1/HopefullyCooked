@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7e0c341870264c9211a7a35c2edaa, type: 3}
+  m_Name: FriedRiceScript
+  m_EditorClassIdentifier: 
+  foodName: 12
+  foodModel: {fileID: 205801312572028305, guid: c83eb44b983af9c4d9dd3286de20a002, type: 3}
+  requiredIngredients:
+  - {fileID: 11400000, guid: 1a89542ad550b894e9ec77821d5ba806, type: 2}
+  - {fileID: 11400000, guid: 7c4ad2af999fdf742bcb7ec453c36fbf, type: 2}
+  optionalIngredients:
+  - {fileID: 11400000, guid: 35e0a1c3371012b498a6fb30c4a3b09b, type: 2}
+  - {fileID: 11400000, guid: 6a08f18d663736d48b6e9900926344a9, type: 2}
+  - {fileID: 11400000, guid: f52302f180cff8a4db9e71dd418a878f, type: 2}
+  - {fileID: 11400000, guid: 62dc19d2d8fa0a24dbd8a7a43ca72d0a, type: 2}
+  - {fileID: 11400000, guid: 743b77f33c55bc645a21f823009fb37a, type: 2}
+  scoreModifier: 1
+  SequenceOfPreparations: 
+  price: 0
+  raw: 1
+  boiled: 0
+  mashed: 0
+  destroyed: 0

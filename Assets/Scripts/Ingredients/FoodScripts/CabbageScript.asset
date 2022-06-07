@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7e0c341870264c9211a7a35c2edaa, type: 3}
+  m_Name: CabbageScript
+  m_EditorClassIdentifier: 
+  foodName: 2
+  foodModel: {fileID: 2544136080438292900, guid: a0a0a00ee5805674c985f21db591c281, type: 3}
+  requiredIngredients: []
+  optionalIngredients: []
+  scoreModifier: 1
+  SequenceOfPreparations: 
+  price: 0.5
+  raw: 1
+  boiled: 0
+  mashed: 0
+  destroyed: 0

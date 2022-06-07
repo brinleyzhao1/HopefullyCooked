@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7e0c341870264c9211a7a35c2edaa, type: 3}
+  m_Name: MacAndCheeseScript
+  m_EditorClassIdentifier: 
+  foodName: 14
+  foodModel: {fileID: 3996215858937438480, guid: 88b57bd976f86fd4e815c13d22eb4ca3, type: 3}
+  requiredIngredients:
+  - {fileID: 11400000, guid: e6c596cdbb098184e864b4a356132109, type: 2}
+  - {fileID: 11400000, guid: 48e788799514e4abdbdf8f89a4a3f805, type: 2}
+  optionalIngredients:
+  - {fileID: 11400000, guid: 62dc19d2d8fa0a24dbd8a7a43ca72d0a, type: 2}
+  - {fileID: 11400000, guid: 6a08f18d663736d48b6e9900926344a9, type: 2}
+  scoreModifier: 1
+  SequenceOfPreparations: 
+  price: 0
+  raw: 1
+  boiled: 0
+  mashed: 0
+  destroyed: 0

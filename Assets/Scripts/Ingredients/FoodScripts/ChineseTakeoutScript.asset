@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7e0c341870264c9211a7a35c2edaa, type: 3}
+  m_Name: ChineseTakeoutScript
+  m_EditorClassIdentifier: 
+  foodName: 9
+  foodModel: {fileID: 2259939271611031685, guid: 13217b2db8e2b4da99f51ca776715dc9, type: 3}
+  requiredIngredients: []
+  optionalIngredients: []
+  scoreModifier: 1
+  SequenceOfPreparations: 
+  price: 12.5
+  raw: 1
+  boiled: 0
+  mashed: 0
+  destroyed: 0

@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ccec1b0053da27469f778fc9df151b5, type: 3}
+  m_Name: RecipeBook
+  m_EditorClassIdentifier: 
+  recipes:
+    list:
+    - Key: 0
+      Value:
+        list:
+        - Key: 1
+          Value: {fileID: 11400000, guid: 41ba482edd74dc847a988bb3e3386b4c, type: 2}
+        keyCollision: 0
+    - Key: 1
+      Value:
+        list:
+        - Key: 4
+          Value: {fileID: 11400000, guid: bd47a5d0e2e0d4782aeb5d961488982e, type: 2}
+        keyCollision: 0
+    - Key: 2
+      Value:
+        list:
+        - Key: 2
+          Value: {fileID: 11400000, guid: 5561f6c4ae050b241ba39f37e3db18e7, type: 2}
+        keyCollision: 0
+    - Key: 3
+      Value:
+        list:
+        - Key: 1
+          Value: {fileID: 11400000, guid: 6a08f18d663736d48b6e9900926344a9, type: 2}
+        keyCollision: 0
+    - Key: 5
+      Value:
+        list:
+        - Key: 2
+          Value: {fileID: 11400000, guid: 8ea7a17e578ba2442a415aafb377c9d3, type: 2}
+        keyCollision: 0
+    - Key: 6
+      Value:
+        list:
+        - Key: 1
+          Value: {fileID: 11400000, guid: 35e0a1c3371012b498a6fb30c4a3b09b, type: 2}
+        keyCollision: 0
+    - Key: 9
+      Value:
+        list:
+        - Key: 4
+          Value: {fileID: 11400000, guid: f50fc0f28e4bd4f7fa4c4d620457c7da, type: 2}
+        keyCollision: 0
+    - Key: 10
+      Value:
+        list:
+        - Key: 5
+          Value: {fileID: 11400000, guid: 1a89542ad550b894e9ec77821d5ba806, type: 2}
+        keyCollision: 0
+    - Key: 13
+      Value:
+        list:
+        - Key: 2
+          Value: {fileID: 11400000, guid: b0e09e863e7c744ac94324c4249021e1, type: 2}
+        keyCollision: 0
+    - Key: 16
+      Value:
+        list:
+        - Key: 1
+          Value: {fileID: 11400000, guid: e6c596cdbb098184e864b4a356132109, type: 2}
+        keyCollision: 0
+    - Key: 18
+      Value:
+        list:
+        - Key: 4
+          Value: {fileID: 11400000, guid: 58de52d8a29e74f04ac797160afd58b9, type: 2}
+        keyCollision: 0
+    - Key: 20
+      Value:
+        list:
+        - Key: 1
+          Value: {fileID: 11400000, guid: f52302f180cff8a4db9e71dd418a878f, type: 2}
+        keyCollision: 0
+    - Key: 21
+      Value:
+        list:
+        - Key: 3
+          Value: {fileID: 11400000, guid: 37d9dce129a800a45a4141081a0534a5, type: 2}
+        keyCollision: 0
+    - Key: 23
+      Value:
+        list:
+        - Key: 1
+          Value: {fileID: 11400000, guid: 7c4ad2af999fdf742bcb7ec453c36fbf, type: 2}
+        keyCollision: 0
+    - Key: 27
+      Value:
+        list:
+        - Key: 1
+          Value: {fileID: 11400000, guid: 62dc19d2d8fa0a24dbd8a7a43ca72d0a, type: 2}
+        - Key: 5
+          Value: {fileID: 11400000, guid: 62dc19d2d8fa0a24dbd8a7a43ca72d0a, type: 2}
+        keyCollision: 0
+    - Key: 31
+      Value:
+        list:
+        - Key: 2
+          Value: {fileID: 11400000, guid: 9380ed56fb6dd49dd9861a773567143b, type: 2}
+        keyCollision: 0
+    - Key: 32
+      Value:
+        list:
+        - Key: 1
+          Value: {fileID: 11400000, guid: 743b77f33c55bc645a21f823009fb37a, type: 2}
+        - Key: 5
+          Value: {fileID: 11400000, guid: 743b77f33c55bc645a21f823009fb37a, type: 2}
+        keyCollision: 0
+    - Key: 24
+      Value:
+        list:
+        - Key: 5
+          Value: {fileID: 11400000, guid: 7c4ad2af999fdf742bcb7ec453c36fbf, type: 2}
+        keyCollision: 0
+    keyCollision: 0
+  compoundRecipes:
+  - {fileID: 11400000, guid: 1a522b3e379b91c4aa58c6086ec00c7f, type: 2}
+  - {fileID: 11400000, guid: 280f5cd0f4508ce4282fe5a6cb152e90, type: 2}
+  - {fileID: 11400000, guid: b78269d22d5d32d4fa5297dffd81aecb, type: 2}
+  - {fileID: 11400000, guid: a38beb095b8e8254fb040e5ecc87b187, type: 2}
+  - {fileID: 11400000, guid: 5656aced074d6eb4f9201374d775e8b9, type: 2}
+  - {fileID: 11400000, guid: 9158934576668ad45a201629a555a8ff, type: 2}
+  poo: {fileID: 11400000, guid: 35d40a3274064e342bfa0b412920c84c, type: 2}
