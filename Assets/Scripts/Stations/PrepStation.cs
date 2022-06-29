@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Misc_Scripts;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
@@ -88,6 +89,7 @@ namespace Stations
         }
         else
         {
+          StartCoroutine(_gameManager.DisplayPressAgainText());
           //todo: prompt player to precess space again to interact
         }
       }
@@ -96,10 +98,10 @@ namespace Stations
 
     public override void Interact()
     {
-       if (timeBeforeBurnt == 0) //if is an instantaneous station, such as chopping
-       {
-         PickUpPreppedFood();
-       }
+      if (timeBeforeBurnt == 0) //if is an instantaneous station, such as chopping
+      {
+        PickUpPreppedFood();
+      }
       else if (_inAction == false && ingredients.Count > 0)
       {
         StartCoroutine(StartTimer());
@@ -109,6 +111,8 @@ namespace Stations
         TryPickUpPreppedFood();
       }
     }
+
+    #region Private
 
     private void TryPickUpPreppedFood()
     {
@@ -154,7 +158,6 @@ namespace Stations
         IngredientScript preppedFood;
         if (canHaveMultipleIngredients && ingredients.Count > 1)
         {
-
           // Debug.Log("THESE ARE THE INGREDIENTS: ");
           // foreach (var ingredient in ingredients)
           // {
@@ -165,7 +168,6 @@ namespace Stations
         }
         else
         {
-
           preppedFood = ingredients[0];
         }
 
@@ -217,5 +219,7 @@ namespace Stations
       // sfx.PlaySuccessSFX();
       // inMiddleOfOneActivity = false;
     }
+
+    #endregion
   }
 }

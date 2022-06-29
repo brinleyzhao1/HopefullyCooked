@@ -1,203 +1,207 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+namespace Misc_Scripts
 {
-  [SerializeField] OrderManager orderManager;
-  [SerializeField] bool inLevel1;
-  [SerializeField] bool inLevel2;
-  [SerializeField] StarterAssets.StarterAssetsInputs playerInputs;
-  [SerializeField] float score = 0.0f;
-  [SerializeField] float scoreToWin = 20f;
-  [SerializeField] GameObject Level1StartScreen;
-  [SerializeField] GameObject Level2StartScreen;
-  [SerializeField] GameObject endUI;
-  [SerializeField] GameObject WinBanner;
-  [SerializeField] GameObject LoseBanner;
-  [SerializeField] TMPro.TextMeshProUGUI time;
-  [SerializeField] TMPro.TextMeshProUGUI scoreText;
-  [SerializeField] float timeLimit;
-
-  [Header("Hint Texts")] [SerializeField]
-  private TextMeshPro floorHintMessager;
-
-  //[SerializeField] Animation endBannerAnimation;
-
-  //static bool startedLevel1 = false;
-  //static bool startedLevel2 = false;
-
-  bool startedCoroutine = false;
-
-  bool stopCounting = false;
-
-  //[SerializeField] LoadScene loadScene;
-  // Start is called before the first frame update
-  void Start()
+  public class GameManager : MonoBehaviour
   {
-    //PauseGame();
-    // if (inLevel1){
-    //     if (startedLevel1){
-    //         Level1StartScreen.SetActive(false);
-    //         StartLevel();
-    //     }else{
-    //         Level1StartScreen.SetActive(true);
-    //         startedLevel1 = true;
-    //     }
-    // }
-    // if(inLevel2){
-    //     if (startedLevel2){
-    //         Level2StartScreen.SetActive(false);
-    //         StartLevel2();
-    //     }else{
-    //         Level2StartScreen.SetActive(true);
-    //         startedLevel2 = true;
-    //     }
-    // }
-    // StartLevel();
-    endUI.SetActive(false);
-    if (inLevel2){
+    [SerializeField] OrderManager orderManager;
+    [SerializeField] bool inLevel1;
+    [SerializeField] bool inLevel2;
+    [SerializeField] StarterAssets.StarterAssetsInputs playerInputs;
+    [SerializeField] float score = 0.0f;
+    [SerializeField] float scoreToWin = 20f;
+    [SerializeField] GameObject Level1StartScreen;
+    [SerializeField] GameObject Level2StartScreen;
+    [SerializeField] GameObject endUI;
+    [SerializeField] GameObject WinBanner;
+    [SerializeField] GameObject LoseBanner;
+    [SerializeField] TMPro.TextMeshProUGUI time;
+    [SerializeField] TMPro.TextMeshProUGUI scoreText;
+    [SerializeField] float timeLimit;
+
+    [Header("Hint Texts")] [SerializeField]
+    private TextMeshPro floorHintMessager;
+
+    //[SerializeField] Animation endBannerAnimation;
+
+    //static bool startedLevel1 = false;
+    //static bool startedLevel2 = false;
+
+    bool startedCoroutine = false;
+
+    bool stopCounting = false;
+
+    //[SerializeField] LoadScene loadScene;
+    // Start is called before the first frame update
+    void Start()
+    {
+      //PauseGame();
+      // if (inLevel1){
+      //     if (startedLevel1){
+      //         Level1StartScreen.SetActive(false);
+      //         StartLevel();
+      //     }else{
+      //         Level1StartScreen.SetActive(true);
+      //         startedLevel1 = true;
+      //     }
+      // }
+      // if(inLevel2){
+      //     if (startedLevel2){
+      //         Level2StartScreen.SetActive(false);
+      //         StartLevel2();
+      //     }else{
+      //         Level2StartScreen.SetActive(true);
+      //         startedLevel2 = true;
+      //     }
+      // }
+      // StartLevel();
+      endUI.SetActive(false);
+      if (inLevel2){
         orderManager.freeze = false;
+      }
     }
-  }
 
-  // Update is called once per frame
-  void Update()
-  {
-    if (!inLevel1)
+    // Update is called once per frame
+    void Update()
     {
-      //no update needed for tutorial bc no time limit
-      if (!stopCounting)
+      if (!inLevel1)
       {
-        timeLimit -= Time.deltaTime;
+        //no update needed for tutorial bc no time limit
+        if (!stopCounting)
+        {
+          timeLimit -= Time.deltaTime;
+        }
+
+        if (timeLimit <= 0 && !startedCoroutine)
+        {
+          EndLevel();
+          startedCoroutine = true;
+          timeLimit = 0;
+          stopCounting = true;
+        }
+
+        time.text = ((int) timeLimit).ToString();
+      }
+    }
+
+    public void Score(float inScore)
+    {
+      if (stopCounting) return;
+      score += inScore;
+      scoreText.text = "Score: " + score;
+    }
+
+    public void StartLevel()
+    {
+      if (inLevel1)
+      {
+        StartLevel1();
       }
 
-      if (timeLimit <= 0 && !startedCoroutine)
+      if (inLevel2)
       {
-        EndLevel();
-        startedCoroutine = true;
-        timeLimit = 0;
-        stopCounting = true;
+        StartLevel2();
+      }
+    }
+
+    public void StartLevel1()
+    {
+      // Level1StartScreen.SetActive(true);
+      UnPauseGame();
+    }
+
+    public void StartLevel2()
+    {
+      if (Level2StartScreen.activeSelf)
+      {
+        Level2StartScreen.GetComponent<Animation>().Play();
       }
 
-      time.text = ((int) timeLimit).ToString();
+      UnPauseGame();
     }
-  }
 
-  public void Score(float inScore)
-  {
-    if (stopCounting) return;
-    score += inScore;
-    scoreText.text = "Score: " + score;
-  }
-
-  public void StartLevel()
-  {
-    if (inLevel1)
+    void EndLevel()
     {
-      StartLevel1();
+      //StartCoroutine(WaitCoroutine());
+      if (score >= scoreToWin)
+      {
+        WinBanner.SetActive(true);
+      }
+      else
+      {
+        LoseBanner.SetActive(true);
+      }
+
+      scoreText.text = "Final Score: " + score;
+      endUI.SetActive(true);
+      PauseGame();
     }
 
-    if (inLevel2)
+    public void RestartLevel()
     {
-      StartLevel2();
+      StartLevel();
     }
-  }
 
-  public void StartLevel1()
-  {
-    // Level1StartScreen.SetActive(true);
-    UnPauseGame();
-  }
-
-  public void StartLevel2()
-  {
-    if (Level2StartScreen.activeSelf)
+    void UnPauseGame()
     {
-      Level2StartScreen.GetComponent<Animation>().Play();
+      playerInputs.disableInput = false;
+      if (!inLevel1)
+      {
+        //order manager not relevant for tutorial
+        orderManager.freeze = false;
+      }
+
+      stopCounting = false;
     }
 
-    UnPauseGame();
-  }
-
-  void EndLevel()
-  {
-    //StartCoroutine(WaitCoroutine());
-    if (score >= scoreToWin)
+    void PauseGame()
     {
-      WinBanner.SetActive(true);
+      playerInputs.disableInput = true;
+      if (!inLevel1)
+      {
+        //order manager not relevant for tutorial
+        orderManager.freeze = true;
+      }
+
+      stopCounting = true;
     }
-    else
+
+    public IEnumerator DisplayPooText()
     {
-      LoseBanner.SetActive(true);
+      floorHintMessager.text = "huh something went wrong.";
+      yield return new WaitForSeconds(1.5f);
+      floorHintMessager.text = "";
     }
-
-    scoreText.text = "Final Score: " + score;
-    endUI.SetActive(true);
-    PauseGame();
-  }
-
-  public void RestartLevel()
-  {
-    StartLevel();
-  }
-
-  void UnPauseGame()
-  {
-    playerInputs.disableInput = false;
-    if (!inLevel1)
+    public IEnumerator DisplayPressAgainText()
     {
-      //order manager not relevant for tutorial
-      orderManager.freeze = false;
+      floorHintMessager.text = "add more ingredients? or press space again to start";
+      yield return new WaitForSeconds(2f);
+      floorHintMessager.text = "";
     }
 
-    stopCounting = false;
-  }
-
-  void PauseGame()
-  {
-    playerInputs.disableInput = true;
-    if (!inLevel1)
+    public IEnumerator DisplayUndercookedText()
     {
-      //order manager not relevant for tutorial
-      orderManager.freeze = true;
+      // floorHintMessager.SetActive(true);
+      // print(floorHintMessager.GetComponent<TextMeshProUGUI>());
+      floorHintMessager.text = "oops it's undercooked";
+      // floorHintMessager.transform.GetChild(1).gameObject.SetActive(true);
+      yield return new WaitForSeconds(1.5f);
+      floorHintMessager.text = "";
+      // floorHintMessager.SetActive(false);
+      // floorHintMessager.transform.GetChild(1).gameObject.SetActive(false);
     }
 
-    stopCounting = true;
-  }
 
-  public IEnumerator DisplayPooText()
-  {
-    // floorHintMessager.SetActive(true);
-    floorHintMessager.text = "huh something went wrong.";
-    // floorHintMessager.transform.GetChild(0).gameObject.SetActive(true);
-    yield return new WaitForSeconds(1.5f);
-    floorHintMessager.text = "";
-    // floorHintMessager.SetActive(false);
-    // floorHintMessager.transform.GetChild(0).gameObject.SetActive(false);
-  }
-
-  public IEnumerator DisplayUndercookedText()
-  {
-    // floorHintMessager.SetActive(true);
-    // print(floorHintMessager.GetComponent<TextMeshProUGUI>());
-    floorHintMessager.text = "oops it's undercooked";
-    // floorHintMessager.transform.GetChild(1).gameObject.SetActive(true);
-    yield return new WaitForSeconds(1.5f);
-    floorHintMessager.text = "";
-    // floorHintMessager.SetActive(false);
-    // floorHintMessager.transform.GetChild(1).gameObject.SetActive(false);
-  }
-
-
-  public IEnumerator DisplayOvercookedText()
-  {
-    // floorHintMessager.SetActive(true);
-    floorHintMessager.text = "oops it's overcooked";
-    yield return new WaitForSeconds(1.5f);
-    floorHintMessager.text = "";
-    // floorHintMessager.SetActive(false);
-    // floorHintMessager.transform.GetChild(2).gameObject.SetActive(false);
+    public IEnumerator DisplayOvercookedText()
+    {
+      // floorHintMessager.SetActive(true);
+      floorHintMessager.text = "oops it's overcooked";
+      yield return new WaitForSeconds(1.5f);
+      floorHintMessager.text = "";
+      // floorHintMessager.SetActive(false);
+      // floorHintMessager.transform.GetChild(2).gameObject.SetActive(false);
+    }
   }
 }
