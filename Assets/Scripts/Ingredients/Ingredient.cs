@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Ingredients;
 using UnityEngine;
 
 // Used to establish ingredients. Any gameobject with an ingredient component

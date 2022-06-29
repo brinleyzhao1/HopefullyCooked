@@ -1,4 +1,5 @@
 using System.Collections;
+using Orders;
 using TMPro;
 using UnityEngine;
 
@@ -58,7 +59,8 @@ namespace Misc_Scripts
       // }
       // StartLevel();
       endUI.SetActive(false);
-      if (inLevel2){
+      if (inLevel2)
+      {
         orderManager.freeze = false;
       }
     }
@@ -82,7 +84,7 @@ namespace Misc_Scripts
           stopCounting = true;
         }
 
-        time.text = ((int) timeLimit).ToString();
+        time.text = ((int)timeLimit).ToString();
       }
     }
 
@@ -174,9 +176,21 @@ namespace Misc_Scripts
       yield return new WaitForSeconds(1.5f);
       floorHintMessager.text = "";
     }
+
     public IEnumerator DisplayPressAgainText()
     {
-      floorHintMessager.text = "add more ingredients? or press space again to start";
+      floorHintMessager.text = "press space again to start once all ingredients are in";
+      yield return new WaitForSeconds(2f);
+      floorHintMessager.text = "";
+    }
+
+    public IEnumerator DisplaySuccessfulDishText(string dishName)
+    {
+      if (dishName != null)
+      {
+        floorHintMessager.text =  dishName;
+      }
+
       yield return new WaitForSeconds(2f);
       floorHintMessager.text = "";
     }

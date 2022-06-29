@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Ingredients;
 
 [CreateAssetMenu(fileName = "New Recipe Book", menuName = "Recipe Book", order = 52)]
 public class RecipeBookScript : ScriptableObject

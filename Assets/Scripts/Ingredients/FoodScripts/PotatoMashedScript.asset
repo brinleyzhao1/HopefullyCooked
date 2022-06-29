@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PotatoMashedScript
   m_EditorClassIdentifier: 
   foodName: 22
+  displayName: Mashed Potato
   foodModel: {fileID: 3928636968968368609, guid: d77defd1ae79f07469a8434dc2cb891f, type: 3}
   requiredIngredients: []
   optionalIngredients: []

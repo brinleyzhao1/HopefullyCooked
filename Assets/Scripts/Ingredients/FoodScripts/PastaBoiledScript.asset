@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PastaBoiledScript
   m_EditorClassIdentifier: 
   foodName: 17
+  displayName: Boiled Pasta
   foodModel: {fileID: 3441865842800929956, guid: 0a9ebb85bc11f5142b3dc579c6fc92be, type: 3}
   requiredIngredients: []
   optionalIngredients: []

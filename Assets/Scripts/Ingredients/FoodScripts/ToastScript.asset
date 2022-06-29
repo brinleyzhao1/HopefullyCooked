@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ToastScript
   m_EditorClassIdentifier: 
   foodName: 30
+  displayName: Toast
   foodModel: {fileID: 2259939271611031685, guid: 89b01728d53964fe0bb13d638289ec57, type: 3}
   requiredIngredients: []
   optionalIngredients: []

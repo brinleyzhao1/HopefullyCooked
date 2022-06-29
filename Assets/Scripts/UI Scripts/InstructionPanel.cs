@@ -26,7 +26,7 @@ public class InstructionPanel : MonoBehaviour
     panelBG = GetComponent<Image>();
     _input = FindObjectOfType<StarterAssetsInputs>();
     player = FindObjectOfType<ThirdPersonController>();
-    print(_input);
+    // print(_input);
 
 
     gameManager.enabled = false;// .SetActive(false);

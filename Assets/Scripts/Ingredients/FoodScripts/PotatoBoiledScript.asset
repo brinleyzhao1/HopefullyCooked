@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PotatoBoiledScript
   m_EditorClassIdentifier: 
   foodName: 21
+  displayName: Boiled Potato
   foodModel: {fileID: 2259939271611031685, guid: 1545c530eed904b4d96a602a1989b36e, type: 3}
   requiredIngredients: []
   optionalIngredients: []

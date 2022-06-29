@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: EggPanFriedScript
   m_EditorClassIdentifier: 
   foodName: 11
+  displayName: Fried Egg
   foodModel: {fileID: 966685189486556344, guid: fdc069bf95dffb944abcbd68cfd7286f, type: 3}
   requiredIngredients: []
   optionalIngredients: []

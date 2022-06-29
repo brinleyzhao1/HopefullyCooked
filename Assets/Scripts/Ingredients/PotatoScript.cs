@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Ingredients;
 using UnityEngine;
 
 // Specifications for a potato. Currently, it can just be boiled once. 

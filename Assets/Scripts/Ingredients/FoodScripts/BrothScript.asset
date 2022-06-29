@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BrothScript
   m_EditorClassIdentifier: 
   foodName: 0
+  displayName: Broth
   foodModel: {fileID: 422594698510333933, guid: 07503e6086fd6794c85fe05d06a1ad4c, type: 3}
   requiredIngredients: []
   optionalIngredients: []

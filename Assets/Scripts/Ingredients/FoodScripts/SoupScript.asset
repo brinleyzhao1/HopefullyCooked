@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SoupScript
   m_EditorClassIdentifier: 
   foodName: 29
+  displayName: Soup
   foodModel: {fileID: 2259939271611031685, guid: d1eca690b6eb7415891527b9a7347339, type: 3}
   requiredIngredients:
   - {fileID: 11400000, guid: 41ba482edd74dc847a988bb3e3386b4c, type: 2}

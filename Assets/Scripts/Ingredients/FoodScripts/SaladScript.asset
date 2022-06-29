@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SaladScript
   m_EditorClassIdentifier: 
   foodName: 25
+  displayName: Salad
   foodModel: {fileID: 8405024065463313194, guid: e28b0ab646144f14696cb115927be322, type: 3}
   requiredIngredients:
   - {fileID: 11400000, guid: 5561f6c4ae050b241ba39f37e3db18e7, type: 2}

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SandwichScript
   m_EditorClassIdentifier: 
   foodName: 26
+  displayName: Sandwich
   foodModel: {fileID: 9080553417532140703, guid: 89f418344d5894941a27bb76d3cc5d8b, type: 3}
   requiredIngredients:
   - {fileID: 11400000, guid: b0e09e863e7c744ac94324c4249021e1, type: 2}

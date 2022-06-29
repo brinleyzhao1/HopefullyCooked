@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SausageCookedScript
   m_EditorClassIdentifier: 
   foodName: 28
+  displayName: Sausage
   foodModel: {fileID: 2486008706032615669, guid: 5f13417baa9960148a6a030c8a23e07b, type: 3}
   requiredIngredients: []
   optionalIngredients: []

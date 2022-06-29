@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Ingredients;
 using Misc_Scripts;
 using Unity.Mathematics;
 using UnityEngine;
@@ -90,7 +91,6 @@ namespace Stations
         else
         {
           StartCoroutine(_gameManager.DisplayPressAgainText());
-          //todo: prompt player to precess space again to interact
         }
       }
     }
@@ -172,6 +172,10 @@ namespace Stations
         }
 
         GameObject preppedFoodObject = Instantiate(preppedFood.foodModel);
+
+        print(preppedFood.foodName.ToString());
+        StartCoroutine(_gameManager.DisplaySuccessfulDishText(preppedFood.displayName));
+
         //preppedFoodObject.GetComponent<Ingredient>().SetIngredientScript(preppedFood);
         ingredients.Clear();
 
